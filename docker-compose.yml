@@ -1,0 +1,16 @@
+version: ""
+
+services:
+  serveur_html_php:
+    image: richarvey/nginx-php-fpm:latest
+    ports:
+      - "8080:80"
+      - "9000:9000"
+    volumes:
+      - ./www-data:/var/www/html
+    networks:
+      - web_network
+
+networks:
+  web_network:
+    driver: bridge
